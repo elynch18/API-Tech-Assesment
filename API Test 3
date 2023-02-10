@@ -1,0 +1,57 @@
+POST https://demo.docusign.net/v2.1/accounts/{{accountId}}/envelopes
+Content-Type:application/json
+Authorisation:Bearer{{accessToken}}
+
+{
+  "emailSubject": "API Test 3",
+  "emailBlurb": "Answer to API Test 3",
+  "status": "sent",
+  "compositeTemplates": [
+    {
+      "serverTemplates": [
+        {
+          "sequence": "1",
+          "templateId": "8fddc5d9-0ef9-4679-a2ed-9d3122f56d89"
+        }
+      ],
+      "inlineTemplates": [
+        {
+          "sequence": "1",
+          "recipients": {
+            "signers": [
+              {
+                "email": "johndoe@test.test",
+                "name": "John Doe",
+                "recipientId": "1",
+                "roleName": "Main Signer"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "serverTemplates": [
+        {
+          "sequence": "2",
+          "templateId": "216a0b10-0fc8-40d1-83ac-70ece8b270aa"
+        }
+      ],
+      "inlineTemplates": [
+        {
+          "sequence": "1",
+          "recipients": {
+            "signers": [
+              {
+                "email": "janedoe@test.test",
+                "name": "Jane Doe",
+                "recipientId": "2",
+                "roleName": "Secondary Signer"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
