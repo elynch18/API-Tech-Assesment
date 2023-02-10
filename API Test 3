@@ -39,7 +39,7 @@ Authorisation:Bearer{{accessToken}}
       ],
       "inlineTemplates": [
         {
-          "sequence": "1",
+          "sequence": "2",
           "recipients": {
             "signers": [
               {
